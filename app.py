@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/",  methods = ['GET', 'POST'])
 def restaurants():
-    return render_template('restaurants.html')
+    return render_template('trabajos.html')
 
 @app.route('/api/jobs/keywords/<value>')
 def query_keywords(value):

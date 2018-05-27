@@ -20,6 +20,15 @@ ISI
         var ultimo = 10
         var last_id_row = 0
 
+        function link2td(link){
+          if(link){
+            return "<td> <a href="+Ver original +"> link </a> </td>";
+          }
+          else{
+            return "<td> - </td>"
+          }
+        }
+
         function appendData(parsed_data){
                 if(! first_shown){
                         $('td').remove();
@@ -32,7 +41,7 @@ ISI
                                         +"<td> "+ parsed_data[i].location +"</td>"
                                         +"<td>"+ parsed_data[i].summary +"</td>"
                                         +"<td>"+ parsed_data[i].company +"</td>"
-                                        +"<td>"+ parsed_data[i].url +"</td>"
+                                        + link2td(parsed_data[i].url)
                                         +"</tr>");
                         id_row = id_row + 1
                 });
